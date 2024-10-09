@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:59:40 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/09 15:58:47 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/09 17:51:34 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ char *ft_strnstr(const char *str, const char *point, size_t n)
 
     i = 0;
     if (point[i] == '\0')
-        return (str);
+        return (char *)str;
     while (str[i] != '\0' && i < n)
     {
         j = 0;
         while (str[i + j] == point[j])
         {
             if (point[j + 1] == '\0')
-                return (&str[i]);
+                return (char *)(str + i);
             j++;
         }
         i++;

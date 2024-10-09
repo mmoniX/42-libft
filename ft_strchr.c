@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:54:47 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/09 16:03:26 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/09 17:50:33 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char *ft_strchr(const char *str, int c)
     while (str[i] != '\0')
     {
         if (str[i] == c)
-            return (&str[i]);
+            return (char *)(str + i);
         i++;
     }
     return (0);

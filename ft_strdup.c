@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 17:35:03 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/09 17:49:45 by mmonika          ###   ########.fr       */
+/*   Created: 2024/10/09 19:35:38 by mmonika           #+#    #+#             */
+/*   Updated: 2024/10/09 20:02:46 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *str, int c, size_t n)
+char *ft_strdup(const char *s1)
 {
     size_t i;
-    char *cstr;
+    char *dup_s1;
 
-    cstr = (char *)str;
     i = 0;
-    while (cstr[i] != '\0' && i < n)
+    dup_s1 = malloc(ft_strlen(s1) * sizeof(s1));
+    if (dup_s1 == 0)
+        return (0);
+    while (s1[i] != '\0')
     {
-        if (cstr[i] == c)
-            return (void *)(str + i);
+        dup_s1[i] = s1[i];
         i++;
     }
-    return(0);
+    dup_s1[i] = '\0';
+    return (dup_s1);
 }
 
 
-// int main(void)
+// int main()
 // {
-//     char str[] = "hi there!";
-//     int ch = 'e';
-//     char *func = ft_memchr(str, ch, 6);
-//     char *lib = memchr(str, ch, 6);
-// 	printf("function: %s\nlibrary: %s\n", func, lib);
-//     return (0);
+//     char src[] = "GeeksForGeeks";
+//     char *func = ft_strdup(src);
+//     char *lib = strdup(src);
+    
+//     printf("lib: %s\n", lib);
+//     printf("func: %s\n", func);
+//     return 0;
 // }

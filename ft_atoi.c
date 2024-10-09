@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 17:35:03 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/09 17:49:45 by mmonika          ###   ########.fr       */
+/*   Created: 2024/10/09 17:55:12 by mmonika           #+#    #+#             */
+/*   Updated: 2024/10/09 18:45:15 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *str, int c, size_t n)
+int ft_atoi(const char *str)
 {
-    size_t i;
-    char *cstr;
+    int i;
+    int num;
+    int sign;
 
-    cstr = (char *)str;
     i = 0;
-    while (cstr[i] != '\0' && i < n)
+    num = 0;
+    sign = 1;
+    while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+        i++;
+    if (str[i] == '-')
     {
-        if (cstr[i] == c)
-            return (void *)(str + i);
+        sign = -1;
         i++;
     }
-    return(0);
+    else if (str[i] == '+')
+        i++;
+    while (str[i] >= '0' && str[i] <= '9')
+    {
+        num = num * 10 + (str[i] - '0');
+        i++;
+    }
+    return (sign * num);
 }
 
 
 // int main(void)
 // {
-//     char str[] = "hi there!";
-//     int ch = 'e';
-//     char *func = ft_memchr(str, ch, 6);
-//     char *lib = memchr(str, ch, 6);
-// 	printf("function: %s\nlibrary: %s\n", func, lib);
+//     char str[] = "--458";
+//     int n = ft_atoi(str);
+//     printf("%i\n", n);
 //     return (0);
 // }
