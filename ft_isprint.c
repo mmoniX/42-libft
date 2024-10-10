@@ -6,19 +6,18 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:35:35 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/09 16:01:25 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/09 20:39:14 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (c >= ' ' && c <= '~')
-        return (1);
-    return (0);
+	if (c >= ' ' && c <= '~')
+		return (1);
+	return (0);
 }
-
 
 // int main(void)
 // {

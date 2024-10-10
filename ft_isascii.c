@@ -6,19 +6,18 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:31:00 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/09 16:01:04 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/09 20:38:17 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c >= 0 && c <= 127)
-        return (1);
-    return (0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
-
 
 // int main(void)
 // {

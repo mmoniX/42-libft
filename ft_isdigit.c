@@ -6,19 +6,18 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:11:55 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/09 16:01:15 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/09 20:38:44 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= '0' && c <= '9')
-        return (1);
-    return (0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
-
 
 // int main(void)
 // {
