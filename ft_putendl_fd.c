@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 15:54:47 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/10 18:28:18 by mmonika          ###   ########.fr       */
+/*   Created: 2024/10/10 19:33:24 by mmonika           #+#    #+#             */
+/*   Updated: 2024/10/10 19:43:30 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
+	int	len;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == (char)c)
-			return ((char *)(str + i));
-		i++;
-	}
-	if ((char)c == '\0')
-		return ((char *)(str + i));
-	return (0);
+	len = ft_strlen(s);
+	if (fd < 0)
+		return ;
+	write (fd, s, len);
+	write (fd, '\n', 1);
 }
-
-// int main(void)
-// {
-//     char str[] = "hi there!";
-//     int ch = 'i';
-//     char *res = ft_strchr(str, ch);
-//     printf("%s\n", res);
-//     return (0);
-// }

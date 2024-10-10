@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 15:54:47 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/10 18:28:18 by mmonika          ###   ########.fr       */
+/*   Created: 2024/10/10 19:39:31 by mmonika           #+#    #+#             */
+/*   Updated: 2024/10/10 19:56:00 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (fd < 0)
+		return ;
+	if (n == -2147483648)
+		write (fd, &"-2147483648", 11);
+	else if (n < 0)
 	{
-		if (str[i] == (char)c)
-			return ((char *)(str + i));
-		i++;
+		write (fd, "-", 1);
+		n = -n;
+		ft_putnbr_fd(n, fd);
 	}
-	if ((char)c == '\0')
-		return ((char *)(str + i));
-	return (0);
+	else
+	{
+		if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+			ft_putnbr_fd(n % 10, fd);
+		}
+        else
+		{
+			digit = n + 48;
+			write(fd, &digit, 1);
+			}
+	}
 }
-
-// int main(void)
-// {
-//     char str[] = "hi there!";
-//     int ch = 'i';
-//     char *res = ft_strchr(str, ch);
-//     printf("%s\n", res);
-//     return (0);
-// }
