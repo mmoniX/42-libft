@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:05:23 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/09 20:32:16 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/10 12:51:55 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ void	ft_bzero(void *str, size_t n)
 
 	i = 0;
 	temp = (char *)str;
-	while (i++ < n)
+	while (i < n)
+	{
 		temp[i] = 0;
+		i++;
+	}
 }
 
 // int main(void)

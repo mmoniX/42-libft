@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:02:33 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/10 12:37:50 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/10 14:29:32 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,20 @@ char	*ft_strrchr(const char *str, int c)
 
 	len = ft_strlen(str);
 	i = len;
-	while (str[i - 1] != '\0')
+	while (i > 0)
 	{
-		if (str[i] == c)
-			return ((char *)(str + i));
+		if (str[i - 1] == (char)c)
+			return ((char *)(str + i - 1));
 		i--;
 	}
+	if ((char)c == '\0')
+		return ((char *)(str + len));
 	return (0);
 }
 
 // int main(void)
 // {
-//     char str[] = "hi there!";
+//     char str[] = "monika";
 //     int ch = 'e';
 //     char *res = ft_strrchr(str, ch);
 //     printf("%s\n", res);

@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:44:45 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/09 20:47:51 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/10 12:51:28 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	i = 0;
 	temp = (char *)b;
-	while (i++ < len)
+	while (i < len)
+	{
 		temp[i] = c;
+		i++;
+	}
 	return (b);
 }
 

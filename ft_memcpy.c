@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:20:39 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/09 20:44:48 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/10 14:52:16 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	cdest = (char *)dest;
 	csrc = (char *)src;
-	while (i++ < n)
+	if (dest == 0 && src == 0)
+		return (dest);
+	while (i < n)
+	{
 		cdest[i] = csrc[i];
+		i++;
+	}
 	return (dest);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:46:00 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/09 20:34:07 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/10 14:25:12 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ void	*ft_calloc(size_t count, size_t n)
 	temp_var = malloc(total_size);
 	if (temp_var == 0)
 		return (0);
-	while (i++ < total_size)
+	while (i < total_size)
+	{
 		temp_var[i] = 0;
+		i++;
+	}
 	return (temp_var);
 }
 
