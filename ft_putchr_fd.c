@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 19:08:38 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/10 19:33:58 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/12 12:18:33 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,10 @@ void	ft_putchr_fd(char c, int fd)
 {
 	write (fd, &c, 1);
 }
+
+// int main()
+// {
+// 	char c = 'M';
+// 	ft_putchr_fd(c, 1);
+// 	return (0);
+// }
