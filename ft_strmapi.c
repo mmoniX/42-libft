@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 19:35:38 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/12 18:13:09 by mmonika          ###   ########.fr       */
+/*   Created: 2024/10/12 18:23:29 by mmonika           #+#    #+#             */
+/*   Updated: 2024/10/12 20:25:06 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	char	*dup_s1;
+	unsigned int	i;
+	unsigned int	len;
+	char			*str;
 
 	i = 0;
-	dup_s1 = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char));
-	if (dup_s1 == 0)
+	len = ft_strlen(s);
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (str == (void *)0)
 		return (0);
-	while (s1[i] != '\0')
+	while (i < len)
 	{
-		dup_s1[i] = s1[i];
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
-	dup_s1[i] = '\0';
-	return (dup_s1);
+	str[i] = '\0';
+	return (str);
 }
 
+// char f(unsigned int i, char c)
+// {
+// 	return (c + i);
+// }
 // int main()
 // {
-//     char src[] = "GeeksForGeeks";
-//     char *func = ft_strdup(src);
-//     char *lib = strdup(src);
-//     printf("lib: %s\n", lib);
-//     printf("func: %s\n", func);
-//     return 0;
+// 	char *s = "abcd";
+// 	char *res = ft_strmapi(s, *f);
+// 	printf("%s\n", res);
+// 	return(0);
 // }

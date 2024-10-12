@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:37:37 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/10 17:53:59 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/12 20:32:02 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	concat = malloc(len * sizeof(char));
+	concat = (char *)malloc(len * sizeof(char));
 	if (concat == 0)
 		return (0);
 	while (s1[i] != '\0')

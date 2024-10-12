@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/12 13:53:24 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/12 17:08:56 by mmonika          ###   ########.fr       */
+/*   Created: 2024/10/12 20:05:05 by mmonika           #+#    #+#             */
+/*   Updated: 2024/10/12 20:22:29 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
-// char	**ft_split(char const *s, char c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		(*f)(i, &s[i]);
+		i++;
+	}
+}
+
+// void f(unsigned int i, char *c)
 // {
-// 	size_t	i;
-// 	size_t	len;
-// 	i = 0;
-// 	len =  ft_strlen(s);
+// 	*c = *c + i;
+// }
+// int main()
+// {
+// 	char s[] = "abcde";
+// 	ft_striteri(s, f);
+// 	printf("%s\n", s);
+// 	return(0);
 // }
