@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:03:53 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/12 18:11:31 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/13 12:40:42 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	int_len(int n)
 	return (len);
 }
 
-static char	*pre_conv(int len)
+static char	*mem_al(int len)
 {
 	char	*tmp;
 
@@ -53,7 +53,7 @@ char	*ft_itoa(int n)
 	i = len - 1;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	str = pre_conv(len);
+	str = mem_al(len);
 	if (str == (void *)0)
 		return (0);
 	if (n < 0)
