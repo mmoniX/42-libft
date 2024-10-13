@@ -6,13 +6,13 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:53:24 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/13 18:00:59 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/13 18:50:21 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_count(char *str, char c)
+static int	word_count(const char *str, char c)
 {
 	int	i;
 	int	count;
@@ -35,7 +35,7 @@ static int	word_count(char *str, char c)
 	return (count);
 }
 
-static int	word_len(char *str, char c)
+static int	word_len(const char *str, char c)
 {
 	int	i;
 
@@ -45,7 +45,7 @@ static int	word_len(char *str, char c)
 	return (i);
 }
 
-static char	*word_mem(char *str, char c)
+static char	*word_mem(const char *str, char c)
 {
 	int		i;
 	int		len;
@@ -77,29 +77,29 @@ static void	free_mem(char **str, int n)
 	free(str);
 }
 
-char	**ft_split(char *str, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	char	**result;
 
 	i = 0;
-	result = (char **)malloc((word_count(str, c) + 1) * sizeof(char *));
+	result = (char **)malloc((word_count(s, c) + 1) * sizeof(char *));
 	if (result == (void *)0)
 		return (0);
-	while (*str)
+	while (*s)
 	{
-		while (*str == c)
-			str++;
-		if (*str)
+		while (*s == c)
+			s++;
+		if (*s)
 		{
-			result[i] = word_mem(str, c);
+			result[i] = word_mem(s, c);
 			if (result[i] == (void *)0)
 			{
-				free_mem(result, i - 1);
+				free_mem(result, i);
 				return (0);
 			}
 			i++;
-			str += word_len(str, c);
+			s += word_len(s, c);
 		}
 	}
 	result[i] = 0;

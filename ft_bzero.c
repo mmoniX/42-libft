@@ -6,19 +6,19 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:05:23 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/10 12:51:55 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/13 18:23:41 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *str, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*temp;
 	size_t	i;
 
 	i = 0;
-	temp = (char *)str;
+	temp = (char *)s;
 	while (i < n)
 	{
 		temp[i] = 0;
