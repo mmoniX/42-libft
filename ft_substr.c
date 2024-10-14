@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:01:34 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/12 20:32:54 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/14 11:58:56 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
 	copy = (char *)malloc((len + 1) * sizeof(char));
-	if (copy == 0)
+	if (copy == (void *)0)
 		return (0);
 	while (i < len)
 	{

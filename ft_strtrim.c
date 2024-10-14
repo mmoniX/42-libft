@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:57:22 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/12 13:52:39 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/14 11:58:36 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		len--;
 	final_len = len - i + 1;
 	final = (char *)malloc(final_len * sizeof(char));
-	if (final == 0)
+	if (final == (void *)0)
 		return (0);
 	ft_strlcpy(final, s1 + i, final_len);
 	return (final);

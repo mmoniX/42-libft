@@ -6,7 +6,7 @@
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 19:35:38 by mmonika           #+#    #+#             */
-/*   Updated: 2024/10/12 18:13:09 by mmonika          ###   ########.fr       */
+/*   Updated: 2024/10/14 11:54:13 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	dup_s1 = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char));
-	if (dup_s1 == 0)
+	if (dup_s1 == (void *)0)
 		return (0);
 	while (s1[i] != '\0')
 	{
