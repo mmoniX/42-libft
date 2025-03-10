@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 17:44:45 by mmonika           #+#    #+#             */
-/*   Updated: 2024/11/05 15:48:00 by mmonika          ###   ########.fr       */
+/*   Created: 2025/03/10 13:56:09 by mmonika           #+#    #+#             */
+/*   Updated: 2025/03/10 14:09:45 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char	*temp;
-	size_t	i;
+	t_list	*temp;
 
-	i = 0;
-	temp = (char *)b;
-	while (i < len)
+	if (!lst || !del || !(*lst))
+		return ;
+	while (*lst)
 	{
-		temp[i] = c;
-		i++;
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
 	}
-	return (b);
+	free(*lst);
+	*lst = NULL;
 }
-
-// int main() 
-// { 
-// 	char str[] = "42 school"; 
-// 	memset(str, 'o', 8); 
-// 	printf("%s", str); 
-// 	return 0; 
-// }

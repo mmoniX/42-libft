@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonika <mmonika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 17:44:45 by mmonika           #+#    #+#             */
-/*   Updated: 2024/11/05 15:48:00 by mmonika          ###   ########.fr       */
+/*   Created: 2025/03/10 13:45:52 by mmonika           #+#    #+#             */
+/*   Updated: 2025/03/10 14:32:15 by mmonika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	*temp;
-	size_t	i;
+	t_list	*temp;
 
-	i = 0;
-	temp = (char *)b;
-	while (i < len)
+	if (!new)
+		return ;
+	if (!*lst)
 	{
-		temp[i] = c;
-		i++;
+		*lst = new;
+		return ;
 	}
-	return (b);
+	temp = ft_lstlast(*lst);
+	temp->next = new;
 }
-
-// int main() 
-// { 
-// 	char str[] = "42 school"; 
-// 	memset(str, 'o', 8); 
-// 	printf("%s", str); 
-// 	return 0; 
-// }
